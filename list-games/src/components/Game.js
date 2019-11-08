@@ -18,18 +18,18 @@ class Game extends Component {
     
     return(
       <div>
-      <CardColumns>
-        {this.props.games.map( item =>
-        <Card body id={item.id}>
-          <CardImg top width="100%" src={item.background_image} alt={item.slug} />
-          <CardBody>
-            <CardTitle>{item.name}</CardTitle>
-            <CardSubtitle>Ratings: {item.rating}</CardSubtitle>
-            <Button onClick={() => this.deleteCard(item.id)}>Delete this card</Button>
-          </CardBody>
-        </Card>      
-        )}
-      </CardColumns>
+        <CardColumns>
+          {this.props.games.map( item =>
+          <Card body id={item.id} key={item.id}>
+            <CardImg top width="100%" src={item.background_image} alt={item.slug} />
+            <CardBody>
+              <CardTitle>{item.name}</CardTitle>
+              <CardSubtitle>Ratings: {item.rating}</CardSubtitle>
+              <Button onClick={() => this.deleteCard(item.id)}>Delete this card</Button>
+            </CardBody>
+          </Card>      
+          )}
+        </CardColumns>
       </div>
     )
   }
