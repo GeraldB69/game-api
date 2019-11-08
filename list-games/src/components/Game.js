@@ -8,24 +8,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class Game extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
-    this.games = this.state.games;
+    this.state = {...this.props.games};
   }
-
-  deleteCard = (id) => document.getElementById(id).style.display = "none";
 
   render() {
     
     return(
       <div>
+        <Button>Best Games</Button>
         <CardColumns>
-          {this.props.games.map( item =>
+          {this.props.games.map( (item,index) =>
           <Card body id={item.id} key={item.id}>
             <CardImg top width="100%" src={item.background_image} alt={item.slug} />
             <CardBody>
               <CardTitle>{item.name}</CardTitle>
               <CardSubtitle>Ratings: {item.rating}</CardSubtitle>
-              <Button onClick={() => this.deleteCard(item.id)}>Delete this card</Button>
+              <Button onClick={() => this.props.deleteCard(index)}>Delete this card</Button>
             </CardBody>
           </Card>      
           )}
