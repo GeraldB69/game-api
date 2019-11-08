@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {
+import { Button, 
   Card, CardImg, CardBody,
   CardTitle, CardSubtitle, CardColumns
 } from 'reactstrap';
@@ -12,6 +12,8 @@ class Game extends Component {
     this.games = this.state.games;
   }
 
+  deleteCard =(id) => document.getElementById(id).style.display = "none";
+
   render() {
     
     return(
@@ -23,6 +25,7 @@ class Game extends Component {
           <CardBody>
             <CardTitle>{item.name}</CardTitle>
             <CardSubtitle>Ratings: {item.rating}</CardSubtitle>
+            <Button onClick={() => this.deleteCard(item.id)}>Delete this card</Button>
           </CardBody>
         </Card>      
         )}
