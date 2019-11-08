@@ -12,7 +12,7 @@ class Game extends Component {
     this.games = this.state.games;
   }
 
-  deleteCard =(id) => document.getElementById(id).style.display = "none";
+  deleteCard = (id) => document.getElementById(id).style.display = "none";
 
   render() {
     

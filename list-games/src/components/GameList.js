@@ -76,13 +76,6 @@ class GameList extends Component {
 
   componentDidMount() {
     this.getInfos();
-    setInterval(
-      () =>
-        axios
-          .get("https://wild-games.herokuapp.com/api/v1")
-          .then(({ data }) => this.setState({ games:data })),
-      1000
-    );
   }
 
   getInfos = async () => {
