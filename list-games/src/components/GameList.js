@@ -8,8 +8,6 @@ class GameList extends Component {
     this.state = {
       games:[]
     }
-    // this.item = this.props.item;
-    this.index = this.props.index;
   }
 
   componentDidMount() {
