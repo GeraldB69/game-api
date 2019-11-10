@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import Game from "./Game";
+import { Game, Screenshot } from "./Game";
 
 class GameList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      games:[]
+      games:[],
+      screenshots: []
     }
   }
 
@@ -31,14 +32,21 @@ class GameList extends Component {
   }
 
   render() {
-    if (this.state.games.length === null) 
-      this.getInfos();
-    else {
-      return <Game 
-        games = {this.state.games}
-        deleteCard = {(index) => this.deleteCard(index)}
+    if (this.state.games.length === null) this.getInfos();
+    else if (this.props.match.params.id){
+      return <Screenshot 
+        name = {this.state.games[this.props.match.params.id].name}
+        screenshots = {this.state.games[this.props.match.params.id].short_screenshots} 
       />
     }
+    else {
+      return (
+        <Game 
+          games = {this.state.games} 
+          deleteCard = {(index) => this.deleteCard(index)}
+        />
+      );
+    }      
   }
 }
 

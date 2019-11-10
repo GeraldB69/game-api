@@ -23,6 +23,14 @@ body {
   color: #09d3ac;
 }
 
-button {
-  margin: 1em;
+.card > button {
+  margin: 1em 0;
+}
+.nav-link {
+  cursor: pointer;
+}
+.float-right {
+  position: absolute;
+  right: 10px;
+
 }
