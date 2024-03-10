@@ -1,16 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import GameList from "./components/GameList";
 import './App.css';
 
+
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={GameList} />
-          <Route path="/game/screenshot/:id" component={GameList} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<GameList />}></Route>
+          <Route path="/game/fullscreen/:id" element={<GameList />}></Route>
+        </Routes>
       </BrowserRouter>
     </div>
   );

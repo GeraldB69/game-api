@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
+import { useParams } from 'react-router';  
 import axios from "axios";
-import { Game, Screenshot } from "./Game";
+
+import { Game, Fullscreen } from "./Game";
+
+
+const withRouter = WrappedComponent => props => {
+  const params = useParams();
+  return (
+    <WrappedComponent {...props} params={params} />
+  );
+};
+
 
 class GameList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       games:[],
-      screenshots: []
+      fullscreen:[] 
     }
   }
 
@@ -18,7 +29,7 @@ class GameList extends Component {
   getInfos = async () => {
     try {
       const { data } = await axios.get(
-        "https://wild-games.herokuapp.com/api/v1"
+        "https://www.freetogame.com/api/games?platform=pc"
       );
       this.setState({ games: data });
     } catch (e) {
@@ -31,12 +42,16 @@ class GameList extends Component {
     this.setState({games: newGames});
   }
 
+  setTitle = (title) => {
+    this.setState({fullscreen: title} )
+  } 
+
   render() {
     if (this.state.games.length === null) this.getInfos();
-    else if (this.props.match.params.id){
-      return <Screenshot 
-        name = {this.state.games[this.props.match.params.id].name}
-        screenshots = {this.state.games[this.props.match.params.id].short_screenshots} 
+    else if (this.props.params.id){
+      return <Fullscreen 
+        id={this.props.params.id} 
+        title ={this.state.fullscreen} 
       />
     }
     else {
@@ -44,10 +59,11 @@ class GameList extends Component {
         <Game 
           games = {this.state.games} 
           deleteCard = {(index) => this.deleteCard(index)}
+          setTitle = {(title) => this.setTitle(title)} 
         />
       );
     }      
   }
 }
 
-export default GameList;
+export default withRouter(GameList);
