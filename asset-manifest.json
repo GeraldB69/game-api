@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Game-API/static/css/main.5d29a4f0.css",
+    "main.js": "/Game-API/static/js/main.736270e5.js",
+    "index.html": "/Game-API/index.html",
+    "main.5d29a4f0.css.map": "/Game-API/static/css/main.5d29a4f0.css.map",
+    "main.736270e5.js.map": "/Game-API/static/js/main.736270e5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5d29a4f0.css",
+    "static/js/main.736270e5.js"
+  ]
+}
