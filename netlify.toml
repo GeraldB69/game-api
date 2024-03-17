@@ -1,0 +1,15 @@
+[[redirects]]
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "https://www.freetogame.com/api/:splat"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"

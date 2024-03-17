@@ -27,14 +27,19 @@ class GameList extends Component {
   }
 
   getInfos = async () => {
-    try {
-      const { data } = await axios.get(
-        "https://www.freetogame.com/api/games?platform=pc"
-      );
-      this.setState({ games: data });
-    } catch (e) {
-      console.log(e);
-    }
+    const headers = {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, OPTION",
+      "Content-Type": "application/json"
+    };
+    await axios.get(
+        "/api/games?platform=pc",
+        {withCredentials: false}, {headers}
+      ).then(response => {
+        this.setState({ games: response.data  });
+      }).catch(e => {
+        console.log(e);
+      })
   };
 
   deleteCard = (id) => {
