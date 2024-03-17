@@ -37,8 +37,8 @@ class GameList extends Component {
     }
   };
 
-  deleteCard = (index) => {
-    const newGames = this.state.games.filter((item, i) => i !== index);
+  deleteCard = (id) => {
+    const newGames = this.state.games.filter((item, i) => item.id !== id);
     this.setState({games: newGames});
   }
 

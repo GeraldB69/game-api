@@ -1,36 +1,26 @@
 body {
-  margin: 10px;
+  margin: 0;
   padding: 10px;
-  background-color: #eee;;
-}
-
-.App {
+  background-color: #eee;
   text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-columns {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #09d3ac;
-}
+.card {
+  padding: 1em;
+  margin: 1em;
+} 
 
-.card > button {
-  margin: 1em 0;
-}
 .nav-link {
   cursor: pointer;
 }
+
 .float-right {
   position: absolute;
   right: 10px;
-
 }
