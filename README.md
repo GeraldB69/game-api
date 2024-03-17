@@ -6,7 +6,7 @@
 
 Initialement réalisé dans le cadre d'un checkpoint de la Wild Code School. 
 
-A partir d'une API (visible ici: [https://www.freetogame.com/api/games](https://www.freetogame.com/api/games?platform=pc)), on récupère une liste de jeux et on affiche les images associées avec la possibilité de supprimer des jeux de l'affichage, d'afficher les jeux les plus récents ou d'afficher l'image en plain écran.
+A partir d'une API (visible ici: [https://www.freetogame.com/api/games](https://www.freetogame.com/api/games?platform=pc)), on récupère une liste de jeux et on affiche les images associées avec la possibilité de supprimer des jeux de l'affichage, d'afficher les jeux les plus récents ou d'afficher l'image en plein écran.
 
 Utilisation de React, Vite, Bootstrap et Axios.
 
