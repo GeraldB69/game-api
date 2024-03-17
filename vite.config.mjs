@@ -10,18 +10,5 @@ export default defineConfig({
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
     }
   },
-  // base: "/game-api/",
-  // base: "/",
-  server: {
-    proxy: {
-      "/api": {
-        // target: "https://www.freetogame.com/api/games?platform=pc",
-        target: "https://www.freetogame.com/api",
-        changeOrigin: true,
-        secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
-    },
-  },
   plugins: [react()],
 })
