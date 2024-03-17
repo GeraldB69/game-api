@@ -10,6 +10,6 @@ export default defineConfig({
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
     }
   },
-  base: "/Game-API",
+  base: "/game-api/",
   plugins: [react()],
 })

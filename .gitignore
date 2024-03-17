@@ -1,2 +1,5 @@
 node_modules/
 .yarnclean
+
+# Local Netlify folder
+.netlify
