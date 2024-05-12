@@ -10,4 +10,4 @@ A partir d'une API (visible ici: [https://www.freetogame.com/api/games](https://
 
 Utilisation de React, Vite, Bootstrap et Axios.
 
-Un aperçu ici: https://game-api.netlify.com/
+Un aperçu ici: https://game-api.netlify.app/
